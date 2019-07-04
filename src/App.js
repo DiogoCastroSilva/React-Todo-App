@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import Header from './components/Header';
+import Tasks from './components/Tasks';
 
 class App extends React.Component {
 
@@ -149,20 +150,10 @@ class App extends React.Component {
     }
     
       return (
-       <div>
-
-         <Header addTask={this.addTask} text={this.state.currentItem.text} taskChange={this.handleTaskChange}/>
-
-        <div className="container">
-            <ul className="todo" id="todo">
-                {todoItem}
-            </ul>
-
-            <ul className="todo" id="completed">
-                {completeItem}
-            </ul>
-        </div>
-        </div>
+          <div>
+            <Header addTask={this.addTask} text={this.state.currentItem.text} taskChange={this.handleTaskChange}/>
+            <Tasks todoItem={todoItem} completeItem={completeItem} />
+          </div>
       );
   }
 }
