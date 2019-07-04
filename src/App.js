@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import Header from './components/Header';
+
 class App extends React.Component {
 
   constructor() {
@@ -149,14 +151,8 @@ class App extends React.Component {
       return (
        <div>
 
-         <header>
-            <form onSubmit={this.addTask}>
-                <input id="item" type="text" value={this.state.currentItem.text} placeholder="add task..." value={this.state.currentItem.text} onChange={this.handleTaskChange} />
-                <button type="submit"  id="add">
-                  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path className='fill' d='M16,8c0,0.5-0.5,1-1,1H9v6c0,0.5-0.5,1-1,1s-1-0.5-1-1V9H1C0.5,9,0,8.5,0,8s0.5-1,1-1h6V1c0-0.5,0.5-1,1-1s1,0.5,1,1v6h6C15.5,7,16,7.5,16,8z' /></svg>
-                </button>
-            </form>
-         </header>
+         <Header addTask={this.addTask} text={this.state.currentItem.text} taskChange={this.handleTaskChange}/>
+
         <div className="container">
             <ul className="todo" id="todo">
                 {todoItem}
