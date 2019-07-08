@@ -13,7 +13,7 @@ let currentValue;
 function handleChange() {
     let previousValue = currentValue;
     currentValue = store.getState();
-
+console.log(currentValue);
     if (previousValue !== currentValue) {
         localStorage.setItem('todoList', JSON.stringify(currentValue));
     }

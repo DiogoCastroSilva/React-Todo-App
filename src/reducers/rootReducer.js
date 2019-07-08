@@ -15,7 +15,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 currentItem: {text: '', key: ''},
                 todos: [...state.todos, action.id],
-                ...state.completed
+                completed: [...state.completed]
             };
         
         case 'ADD_TO_COMPLETED':
