@@ -5,11 +5,15 @@ import TaskItem from './TaskItem';
 
 class Tasks extends React.Component {
 
-    componentDidMount() {
-        console.log(JSON.stringify(localStorage.getItem('todoList')));
+    // componentWillMount() {
+    //     let storage = JSON.stringify(localStorage.getItem('todoList'));
+    //     console.log(storage);
+    //     this.props.addLocalStorage(storage);
+    // }
 
-        let storage = JSON.stringify(localStorage.getItem('todoList'));
-        
+    componentDidMount() {
+        let storage = JSON.parse(localStorage.getItem('todoList'));
+        this.props.addLocalStorage(storage);
     }
 
     removeCompleted = (item, id, whatToDo) => {
@@ -50,7 +54,8 @@ const mapStateToProps = (state) => {
     return {
         addTaskToCompleted: (item) => { dispatch({type: 'ADD_TO_COMPLETED', id: item }); },
         removeTask: (item) => { dispatch({type: 'REMOVE_TASK', id: item });},
-        removeCompletedTask: (item) => { dispatch({type: 'REMOVE_COMPLETED', id: item });}
+        removeCompletedTask: (item) => { dispatch({type: 'REMOVE_COMPLETED', id: item });},
+        addLocalStorage: (item) => { dispatch({ type: 'ADD_LOCAL_STORAGE', id: item }); }
     }
 };
 
