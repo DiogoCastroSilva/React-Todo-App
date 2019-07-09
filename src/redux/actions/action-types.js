@@ -1,0 +1,7 @@
+export const CHANGE_CURRENT = 'CHANGE_CURRENT';
+export const ADD_TASK = 'ADD_TASK';
+export const ADD_TO_COMPLETED = 'ADD_TO_COMPLETED';
+export const REMOVE_TASK = 'REMOVE_TASK';
+export const REMOVE_COMPLETED = 'REMOVE_COMPLETED';
+export const ADD_LOCAL_STORAGE = 'ADD_LOCAL_STORAGE';
+export const FOUND_BAD_WORD = 'FOUND_BAD_WORD';

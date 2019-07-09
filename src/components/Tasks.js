@@ -5,12 +5,6 @@ import TaskItem from './TaskItem';
 
 class Tasks extends React.Component {
 
-    // componentWillMount() {
-    //     let storage = JSON.stringify(localStorage.getItem('todoList'));
-    //     console.log(storage);
-    //     this.props.addLocalStorage(storage);
-    // }
-
     componentDidMount() {
         let storage = JSON.parse(localStorage.getItem('todoList'));
         this.props.addLocalStorage(storage);

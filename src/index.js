@@ -2,25 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-
-import rootReducer from './reducers/rootReducer';
+import store from './redux/store/store';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-let currentValue;
-function handleChange() {
-    let previousValue = currentValue;
-    currentValue = store.getState();
-console.log(currentValue);
-    if (previousValue !== currentValue) {
-        localStorage.setItem('todoList', JSON.stringify(currentValue));
-    }
-}
-
-const store = createStore(rootReducer);
-const unsubscribe = store.subscribe(handleChange);
 
 ReactDOM.render(
     <Provider store={store}>
