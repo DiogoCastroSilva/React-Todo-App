@@ -46,9 +46,14 @@ const rootReducer = (state = initialState, action) => {
                 completed: complete
             }
         case 'ADD_LOCAL_STORAGE':
-            console.log(action.id);
-         const todos = action.id.todos ? action.id.todos : [];
-         const completeds = action.id.completed ? action.id.completed : [];
+            let todos = [];
+            let completeds = [];
+            if (action.id) {
+                todos = action.id['todos'] ? action.id.todos : [];
+                completeds = action.id.completed ? action.id.completed : [];
+            }
+            
+        
             return {
                 currentItem: {text: '', key: ''},
                 todos: [...todos],
