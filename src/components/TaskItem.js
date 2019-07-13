@@ -29,8 +29,6 @@ class TaskItem extends React.Component {
 
     render() {
         const { todos, id } = this.props;
-        console.log(todos);
-
         const todoList = todos ? todos.map(todo => this.createCompleted(todo, id)) : null;
 
         return(
